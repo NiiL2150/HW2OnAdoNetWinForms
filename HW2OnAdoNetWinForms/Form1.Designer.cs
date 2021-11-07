@@ -67,14 +67,14 @@ namespace HW2OnAdoNetWinForms
             // 
             this.infoBox.Location = new System.Drawing.Point(530, 71);
             this.infoBox.Name = "infoBox";
-            this.infoBox.Size = new System.Drawing.Size(258, 20);
+            this.infoBox.Size = new System.Drawing.Size(177, 20);
             this.infoBox.TabIndex = 0;
             // 
             // btn5
             // 
-            this.btn5.Location = new System.Drawing.Point(659, 12);
+            this.btn5.Location = new System.Drawing.Point(614, 12);
             this.btn5.Name = "btn5";
-            this.btn5.Size = new System.Drawing.Size(129, 23);
+            this.btn5.Size = new System.Drawing.Size(93, 23);
             this.btn5.TabIndex = 1;
             this.btn5.Text = "Show products";
             this.btn5.UseVisualStyleBackColor = true;
@@ -84,7 +84,7 @@ namespace HW2OnAdoNetWinForms
             // 
             this.btn4.Location = new System.Drawing.Point(530, 12);
             this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(123, 23);
+            this.btn4.Size = new System.Drawing.Size(78, 23);
             this.btn4.TabIndex = 2;
             this.btn4.Text = "Show types";
             this.btn4.UseVisualStyleBackColor = true;
@@ -200,9 +200,9 @@ namespace HW2OnAdoNetWinForms
             // 
             // btnProd
             // 
-            this.btnProd.Location = new System.Drawing.Point(713, 100);
+            this.btnProd.Location = new System.Drawing.Point(553, 213);
             this.btnProd.Name = "btnProd";
-            this.btnProd.Size = new System.Drawing.Size(75, 23);
+            this.btnProd.Size = new System.Drawing.Size(154, 23);
             this.btnProd.TabIndex = 14;
             this.btnProd.Text = "Products";
             this.btnProd.UseVisualStyleBackColor = true;
@@ -210,9 +210,9 @@ namespace HW2OnAdoNetWinForms
             // 
             // btnTypes
             // 
-            this.btnTypes.Location = new System.Drawing.Point(713, 129);
+            this.btnTypes.Location = new System.Drawing.Point(553, 242);
             this.btnTypes.Name = "btnTypes";
-            this.btnTypes.Size = new System.Drawing.Size(75, 23);
+            this.btnTypes.Size = new System.Drawing.Size(154, 23);
             this.btnTypes.TabIndex = 15;
             this.btnTypes.Text = "Types";
             this.btnTypes.UseVisualStyleBackColor = true;
@@ -220,9 +220,9 @@ namespace HW2OnAdoNetWinForms
             // 
             // btnManagers
             // 
-            this.btnManagers.Location = new System.Drawing.Point(713, 158);
+            this.btnManagers.Location = new System.Drawing.Point(553, 271);
             this.btnManagers.Name = "btnManagers";
-            this.btnManagers.Size = new System.Drawing.Size(75, 23);
+            this.btnManagers.Size = new System.Drawing.Size(154, 23);
             this.btnManagers.TabIndex = 16;
             this.btnManagers.Text = "Managers";
             this.btnManagers.UseVisualStyleBackColor = true;
@@ -230,9 +230,9 @@ namespace HW2OnAdoNetWinForms
             // 
             // btnBuyers
             // 
-            this.btnBuyers.Location = new System.Drawing.Point(713, 187);
+            this.btnBuyers.Location = new System.Drawing.Point(553, 300);
             this.btnBuyers.Name = "btnBuyers";
-            this.btnBuyers.Size = new System.Drawing.Size(75, 23);
+            this.btnBuyers.Size = new System.Drawing.Size(154, 23);
             this.btnBuyers.TabIndex = 17;
             this.btnBuyers.Text = "Buyers";
             this.btnBuyers.UseVisualStyleBackColor = true;
@@ -240,9 +240,9 @@ namespace HW2OnAdoNetWinForms
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(713, 245);
+            this.btnUpdate.Location = new System.Drawing.Point(553, 358);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(154, 37);
             this.btnUpdate.TabIndex = 18;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -250,9 +250,9 @@ namespace HW2OnAdoNetWinForms
             // 
             // btnSales
             // 
-            this.btnSales.Location = new System.Drawing.Point(713, 216);
+            this.btnSales.Location = new System.Drawing.Point(553, 329);
             this.btnSales.Name = "btnSales";
-            this.btnSales.Size = new System.Drawing.Size(75, 23);
+            this.btnSales.Size = new System.Drawing.Size(154, 23);
             this.btnSales.TabIndex = 19;
             this.btnSales.Text = "Sales";
             this.btnSales.UseVisualStyleBackColor = true;
@@ -260,9 +260,9 @@ namespace HW2OnAdoNetWinForms
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(713, 274);
+            this.btnClear.Location = new System.Drawing.Point(553, 401);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.Size = new System.Drawing.Size(154, 37);
             this.btnClear.TabIndex = 20;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -358,7 +358,7 @@ namespace HW2OnAdoNetWinForms
             // 
             this.btn20.Location = new System.Drawing.Point(530, 41);
             this.btn20.Name = "btn20";
-            this.btn20.Size = new System.Drawing.Size(258, 23);
+            this.btn20.Size = new System.Drawing.Size(177, 23);
             this.btn20.TabIndex = 30;
             this.btn20.Text = "Products weren\'t sold in ... days";
             this.btn20.UseVisualStyleBackColor = true;
@@ -368,7 +368,7 @@ namespace HW2OnAdoNetWinForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(719, 450);
             this.Controls.Add(this.btn20);
             this.Controls.Add(this.btn19);
             this.Controls.Add(this.btn18);
