@@ -43,6 +43,23 @@ namespace HW2OnAdoNetWinForms
             this.btn11 = new System.Windows.Forms.Button();
             this.btn12 = new System.Windows.Forms.Button();
             this.dgData = new System.Windows.Forms.DataGridView();
+            this.btnProd = new System.Windows.Forms.Button();
+            this.btnTypes = new System.Windows.Forms.Button();
+            this.btnManagers = new System.Windows.Forms.Button();
+            this.btnBuyers = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnSales = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.btn14 = new System.Windows.Forms.Button();
+            this.btn13 = new System.Windows.Forms.Button();
+            this.btn15 = new System.Windows.Forms.Button();
+            this.btn16 = new System.Windows.Forms.Button();
+            this.btn17 = new System.Windows.Forms.Button();
+            this.btn18 = new System.Windows.Forms.Button();
+            this.btn19 = new System.Windows.Forms.Button();
+            this.btn20 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,9 +72,9 @@ namespace HW2OnAdoNetWinForms
             // 
             // btn5
             // 
-            this.btn5.Location = new System.Drawing.Point(647, 12);
+            this.btn5.Location = new System.Drawing.Point(659, 12);
             this.btn5.Name = "btn5";
-            this.btn5.Size = new System.Drawing.Size(141, 23);
+            this.btn5.Size = new System.Drawing.Size(129, 23);
             this.btn5.TabIndex = 1;
             this.btn5.Text = "Show products";
             this.btn5.UseVisualStyleBackColor = true;
@@ -65,7 +82,7 @@ namespace HW2OnAdoNetWinForms
             // 
             // btn4
             // 
-            this.btn4.Location = new System.Drawing.Point(518, 12);
+            this.btn4.Location = new System.Drawing.Point(530, 12);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(123, 23);
             this.btn4.TabIndex = 2;
@@ -75,9 +92,9 @@ namespace HW2OnAdoNetWinForms
             // 
             // btn3
             // 
-            this.btn3.Location = new System.Drawing.Point(380, 12);
+            this.btn3.Location = new System.Drawing.Point(339, 12);
             this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(132, 23);
+            this.btn3.Size = new System.Drawing.Size(185, 23);
             this.btn3.TabIndex = 3;
             this.btn3.Text = "Show managers";
             this.btn3.UseVisualStyleBackColor = true;
@@ -87,7 +104,7 @@ namespace HW2OnAdoNetWinForms
             // 
             this.btn1.Location = new System.Drawing.Point(12, 13);
             this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(175, 23);
+            this.btn1.Size = new System.Drawing.Size(153, 23);
             this.btn1.TabIndex = 4;
             this.btn1.Text = "Show min bought products";
             this.btn1.UseVisualStyleBackColor = true;
@@ -95,9 +112,9 @@ namespace HW2OnAdoNetWinForms
             // 
             // btn2
             // 
-            this.btn2.Location = new System.Drawing.Point(193, 12);
+            this.btn2.Location = new System.Drawing.Point(171, 12);
             this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(181, 23);
+            this.btn2.Size = new System.Drawing.Size(162, 23);
             this.btn2.TabIndex = 5;
             this.btn2.Text = "Show max bought products";
             this.btn2.UseVisualStyleBackColor = true;
@@ -105,9 +122,9 @@ namespace HW2OnAdoNetWinForms
             // 
             // btn9
             // 
-            this.btn9.Location = new System.Drawing.Point(629, 42);
+            this.btn9.Location = new System.Drawing.Point(220, 129);
             this.btn9.Name = "btn9";
-            this.btn9.Size = new System.Drawing.Size(159, 23);
+            this.btn9.Size = new System.Drawing.Size(245, 23);
             this.btn9.TabIndex = 6;
             this.btn9.Text = "Show the cheapest product";
             this.btn9.UseVisualStyleBackColor = true;
@@ -115,9 +132,9 @@ namespace HW2OnAdoNetWinForms
             // 
             // btn8
             // 
-            this.btn8.Location = new System.Drawing.Point(424, 42);
+            this.btn8.Location = new System.Drawing.Point(12, 129);
             this.btn8.Name = "btn8";
-            this.btn8.Size = new System.Drawing.Size(199, 23);
+            this.btn8.Size = new System.Drawing.Size(202, 23);
             this.btn8.TabIndex = 7;
             this.btn8.Text = "Show the most expensive product";
             this.btn8.UseVisualStyleBackColor = true;
@@ -125,9 +142,9 @@ namespace HW2OnAdoNetWinForms
             // 
             // btn7
             // 
-            this.btn7.Location = new System.Drawing.Point(266, 42);
+            this.btn7.Location = new System.Drawing.Point(339, 41);
             this.btn7.Name = "btn7";
-            this.btn7.Size = new System.Drawing.Size(152, 23);
+            this.btn7.Size = new System.Drawing.Size(185, 23);
             this.btn7.TabIndex = 8;
             this.btn7.Text = "Show the most recent sale";
             this.btn7.UseVisualStyleBackColor = true;
@@ -137,7 +154,7 @@ namespace HW2OnAdoNetWinForms
             // 
             this.btn6.Location = new System.Drawing.Point(12, 42);
             this.btn6.Name = "btn6";
-            this.btn6.Size = new System.Drawing.Size(248, 23);
+            this.btn6.Size = new System.Drawing.Size(321, 23);
             this.btn6.TabIndex = 9;
             this.btn6.Text = "Show average number of products for every type";
             this.btn6.UseVisualStyleBackColor = true;
@@ -176,16 +193,199 @@ namespace HW2OnAdoNetWinForms
             // dgData
             // 
             this.dgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgData.Location = new System.Drawing.Point(12, 100);
+            this.dgData.Location = new System.Drawing.Point(12, 158);
             this.dgData.Name = "dgData";
-            this.dgData.Size = new System.Drawing.Size(776, 338);
+            this.dgData.Size = new System.Drawing.Size(535, 280);
             this.dgData.TabIndex = 13;
+            // 
+            // btnProd
+            // 
+            this.btnProd.Location = new System.Drawing.Point(713, 100);
+            this.btnProd.Name = "btnProd";
+            this.btnProd.Size = new System.Drawing.Size(75, 23);
+            this.btnProd.TabIndex = 14;
+            this.btnProd.Text = "Products";
+            this.btnProd.UseVisualStyleBackColor = true;
+            this.btnProd.Click += new System.EventHandler(this.btnTable_Click);
+            // 
+            // btnTypes
+            // 
+            this.btnTypes.Location = new System.Drawing.Point(713, 129);
+            this.btnTypes.Name = "btnTypes";
+            this.btnTypes.Size = new System.Drawing.Size(75, 23);
+            this.btnTypes.TabIndex = 15;
+            this.btnTypes.Text = "Types";
+            this.btnTypes.UseVisualStyleBackColor = true;
+            this.btnTypes.Click += new System.EventHandler(this.btnTable_Click);
+            // 
+            // btnManagers
+            // 
+            this.btnManagers.Location = new System.Drawing.Point(713, 158);
+            this.btnManagers.Name = "btnManagers";
+            this.btnManagers.Size = new System.Drawing.Size(75, 23);
+            this.btnManagers.TabIndex = 16;
+            this.btnManagers.Text = "Managers";
+            this.btnManagers.UseVisualStyleBackColor = true;
+            this.btnManagers.Click += new System.EventHandler(this.btnTable_Click);
+            // 
+            // btnBuyers
+            // 
+            this.btnBuyers.Location = new System.Drawing.Point(713, 187);
+            this.btnBuyers.Name = "btnBuyers";
+            this.btnBuyers.Size = new System.Drawing.Size(75, 23);
+            this.btnBuyers.TabIndex = 17;
+            this.btnBuyers.Text = "Buyers";
+            this.btnBuyers.UseVisualStyleBackColor = true;
+            this.btnBuyers.Click += new System.EventHandler(this.btnTable_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(713, 245);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 18;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnSales
+            // 
+            this.btnSales.Location = new System.Drawing.Point(713, 216);
+            this.btnSales.Name = "btnSales";
+            this.btnSales.Size = new System.Drawing.Size(75, 23);
+            this.btnSales.TabIndex = 19;
+            this.btnSales.Text = "Sales";
+            this.btnSales.UseVisualStyleBackColor = true;
+            this.btnSales.Click += new System.EventHandler(this.btnTable_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(713, 274);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 20;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(553, 158);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(154, 20);
+            this.dateTimePicker1.TabIndex = 21;
+            this.dateTimePicker1.Value = new System.DateTime(2021, 11, 7, 20, 9, 20, 0);
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(553, 187);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(154, 20);
+            this.dateTimePicker2.TabIndex = 22;
+            this.dateTimePicker2.Value = new System.DateTime(2021, 11, 7, 20, 9, 29, 0);
+            // 
+            // btn14
+            // 
+            this.btn14.Location = new System.Drawing.Point(114, 100);
+            this.btn14.Name = "btn14";
+            this.btn14.Size = new System.Drawing.Size(100, 23);
+            this.btn14.TabIndex = 24;
+            this.btn14.Text = "Most $$$ seller";
+            this.btn14.UseVisualStyleBackColor = true;
+            this.btn14.Click += new System.EventHandler(this.btn_Click);
+            // 
+            // btn13
+            // 
+            this.btn13.Location = new System.Drawing.Point(12, 100);
+            this.btn13.Name = "btn13";
+            this.btn13.Size = new System.Drawing.Size(96, 23);
+            this.btn13.TabIndex = 23;
+            this.btn13.Text = "Most sales seller";
+            this.btn13.UseVisualStyleBackColor = true;
+            this.btn13.Click += new System.EventHandler(this.btn_Click);
+            // 
+            // btn15
+            // 
+            this.btn15.Location = new System.Drawing.Point(220, 100);
+            this.btn15.Name = "btn15";
+            this.btn15.Size = new System.Drawing.Size(113, 23);
+            this.btn15.TabIndex = 25;
+            this.btn15.Text = "Most $$$ buyer";
+            this.btn15.UseVisualStyleBackColor = true;
+            this.btn15.Click += new System.EventHandler(this.btn_Click);
+            // 
+            // btn16
+            // 
+            this.btn16.Location = new System.Drawing.Point(339, 100);
+            this.btn16.Name = "btn16";
+            this.btn16.Size = new System.Drawing.Size(126, 23);
+            this.btn16.TabIndex = 26;
+            this.btn16.Text = "Most sales type";
+            this.btn16.UseVisualStyleBackColor = true;
+            this.btn16.Click += new System.EventHandler(this.btn_Click);
+            // 
+            // btn17
+            // 
+            this.btn17.Location = new System.Drawing.Point(471, 100);
+            this.btn17.Name = "btn17";
+            this.btn17.Size = new System.Drawing.Size(112, 23);
+            this.btn17.TabIndex = 27;
+            this.btn17.Text = "Most $$$ type";
+            this.btn17.UseVisualStyleBackColor = true;
+            this.btn17.Click += new System.EventHandler(this.btn_Click);
+            // 
+            // btn18
+            // 
+            this.btn18.Location = new System.Drawing.Point(589, 100);
+            this.btn18.Name = "btn18";
+            this.btn18.Size = new System.Drawing.Size(118, 23);
+            this.btn18.TabIndex = 28;
+            this.btn18.Text = "Most popular prod";
+            this.btn18.UseVisualStyleBackColor = true;
+            this.btn18.Click += new System.EventHandler(this.btn_Click);
+            // 
+            // btn19
+            // 
+            this.btn19.Location = new System.Drawing.Point(471, 129);
+            this.btn19.Name = "btn19";
+            this.btn19.Size = new System.Drawing.Size(236, 23);
+            this.btn19.TabIndex = 29;
+            this.btn19.Text = "Most $$$ seller between dates:";
+            this.btn19.UseVisualStyleBackColor = true;
+            this.btn19.Click += new System.EventHandler(this.btn_Click);
+            // 
+            // btn20
+            // 
+            this.btn20.Location = new System.Drawing.Point(530, 41);
+            this.btn20.Name = "btn20";
+            this.btn20.Size = new System.Drawing.Size(258, 23);
+            this.btn20.TabIndex = 30;
+            this.btn20.Text = "Products weren\'t sold in ... days";
+            this.btn20.UseVisualStyleBackColor = true;
+            this.btn20.Click += new System.EventHandler(this.btn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn20);
+            this.Controls.Add(this.btn19);
+            this.Controls.Add(this.btn18);
+            this.Controls.Add(this.btn17);
+            this.Controls.Add(this.btn16);
+            this.Controls.Add(this.btn15);
+            this.Controls.Add(this.btn14);
+            this.Controls.Add(this.btn13);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnSales);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnBuyers);
+            this.Controls.Add(this.btnManagers);
+            this.Controls.Add(this.btnTypes);
+            this.Controls.Add(this.btnProd);
             this.Controls.Add(this.dgData);
             this.Controls.Add(this.btn12);
             this.Controls.Add(this.btn11);
@@ -224,6 +424,23 @@ namespace HW2OnAdoNetWinForms
         private System.Windows.Forms.Button btn11;
         private System.Windows.Forms.Button btn12;
         private System.Windows.Forms.DataGridView dgData;
+        private System.Windows.Forms.Button btnProd;
+        private System.Windows.Forms.Button btnTypes;
+        private System.Windows.Forms.Button btnManagers;
+        private System.Windows.Forms.Button btnBuyers;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnSales;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Button btn14;
+        private System.Windows.Forms.Button btn13;
+        private System.Windows.Forms.Button btn15;
+        private System.Windows.Forms.Button btn16;
+        private System.Windows.Forms.Button btn17;
+        private System.Windows.Forms.Button btn18;
+        private System.Windows.Forms.Button btn19;
+        private System.Windows.Forms.Button btn20;
     }
 }
 

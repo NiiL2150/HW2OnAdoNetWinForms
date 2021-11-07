@@ -72,7 +72,7 @@ JOIN ProductTypes AS PT ON P.TypeId = PT.Id;";
 
         public string MaxSalesProducts()
         {
-            return @"SELECT TOP 1 WITH TIES P.Id, P.[Name], P.Price FROM Products AS P
+            return @"SELECT TOP 10 PERCENT WITH TIES P.Id, P.[Name], P.Price FROM Products AS P
 JOIN Sales AS S ON P.Id = S.ProductId
 GROUP BY P.Id, P.[Name], P.Price
 ORDER BY SUM(S.Quantity) DESC;";
@@ -80,7 +80,7 @@ ORDER BY SUM(S.Quantity) DESC;";
 
         public string MinSalesProducts()
         {
-            return @"SELECT TOP 1 WITH TIES P.Id, P.[Name], P.Price FROM Products AS P
+            return @"SELECT TOP 10 PERCENT WITH TIES P.Id, P.[Name], P.Price FROM Products AS P
 JOIN Sales AS S ON P.Id = S.ProductId
 GROUP BY P.Id, P.[Name], P.Price
 ORDER BY SUM(S.Quantity) ASC;";
@@ -88,19 +88,19 @@ ORDER BY SUM(S.Quantity) ASC;";
 
         public string MaxPriceProducts()
         {
-            return @"SELECT TOP 1 WITH TIES Id, [Name], Price FROM Products
+            return @"SELECT TOP 10 PERCENT WITH TIES Id, [Name], Price FROM Products
 ORDER BY Price DESC;";
         }
 
         public string MinPriceProducts()
         {
-            return @"SELECT TOP 1 WITH TIES Id, [Name], Price FROM Products
+            return @"SELECT TOP 10 PERCENT WITH TIES Id, [Name], Price FROM Products
 ORDER BY Price ASC;";
         }
 
         public string ShowRecentSale()
         {
-            return @"SELECT TOP 1 WITH TIES S.[Id], S.[Date], P.[Name] AS [Product], S.Quantity, 
+            return @"SELECT TOP 10 PERCENT WITH TIES S.[Id], S.[Date], P.[Name] AS [Product], S.Quantity, 
 PT.[Name] AS [Type], M.[FirstName] + ' ' + M.[LastName] AS [ManagerFullName],
 B.[Name] AS [BuyerName]
 FROM Sales AS S
@@ -141,6 +141,103 @@ JOIN Sales ON Sales.[ProductId] = Products.Id
 JOIN Buyers ON Buyers.[Id] = Sales.[BuyerId]
 WHERE Buyers.[Name] = @BuyerName
 GROUP BY Products.[Name];";
+        }
+
+        public string ShowProductsPure()
+        {
+            return "SELECT * FROM Products";
+        }
+
+        public string ShowTypesPure()
+        {
+            return "SELECT * FROM ProductTypes";
+        }
+
+        public string ShowManagersPure()
+        {
+            return "SELECT * FROM Managers";
+        }
+
+        public string ShowBuyersPure()
+        {
+            return "SELECT * FROM Buyers";
+        }
+
+        public string ShowSalesPure()
+        {
+            return "SELECT * FROM Sales";
+        }
+
+        public string ShowMostProdMan()
+        {
+            return @"SELECT TOP 10 PERCENT WITH TIES M.Id, M.FirstName, M.LastName FROM Managers AS M
+JOIN Sales AS S ON S.ManagerId = M.Id
+GROUP BY M.Id, M.FirstName, M.LastName
+ORDER BY SUM(S.Quantity) DESC";
+        }
+
+        public string ShowMostExpMan()
+        {
+            return @"SELECT TOP 10 PERCENT WITH TIES M.Id, M.FirstName, M.LastName FROM Managers AS M
+JOIN Sales AS S ON S.ManagerId = M.Id
+JOIN Products AS P ON S.ProductId = P.Id
+GROUP BY M.Id, M.FirstName, M.LastName
+ORDER BY SUM(P.Price*S.Quantity) DESC";
+        }
+
+        public string ShowMostExpManByDate()
+        {
+            return @"SELECT TOP 10 PERCENT WITH TIES M.Id, M.FirstName, M.LastName FROM Managers AS M
+JOIN Sales AS S ON S.ManagerId = M.Id
+JOIN Products AS P ON S.ProductId = P.Id
+WHERE S.Date BETWEEN @Date1 AND @Date2
+GROUP BY M.Id, M.FirstName, M.LastName
+ORDER BY SUM(P.Price*S.Quantity) DESC";
+        }
+
+        public string ShowMostExpBuyer()
+        {
+            return @"SELECT TOP 10 PERCENT WITH TIES B.Id, B.[Name] FROM Buyers AS B
+JOIN Sales AS S ON S.BuyerId = B.Id
+JOIN Products AS P ON S.ProductId = P.Id
+GROUP BY B.Id, B.[Name]
+ORDER BY SUM(P.Price*S.Quantity) DESC";
+        }
+
+        public string ShowMostProdType()
+        {
+            return @"SELECT TOP 10 PERCENT WITH TIES PT.Id, PT.[Name] FROM ProductTypes AS PT
+JOIN Products AS P ON P.TypeId = PT.Id
+JOIN Sales AS S ON P.Id = S.ProductId
+GROUP BY PT.Id, PT.[Name]
+ORDER BY SUM(S.Quantity) DESC";
+        }
+
+        public string ShowMostExpType()
+        {
+            return @"SELECT TOP 10 PERCENT WITH TIES PT.Id, PT.[Name] FROM ProductTypes AS PT
+JOIN Products AS P ON P.TypeId = PT.Id
+JOIN Sales AS S ON P.Id = S.ProductId
+GROUP BY PT.Id, PT.[Name]
+ORDER BY SUM(P.Price*S.Quantity) DESC";
+        }
+
+        public string ShowMostPopProd()
+        {
+            return @"SELECT TOP 10 PERCENT WITH TIES P.Id, P.[Name], P.Price, PT.[Name] AS [Type] FROM Products AS P
+JOIN ProductTypes AS PT ON P.TypeId = PT.Id
+JOIN Sales AS S ON P.Id = S.ProductId
+GROUP BY P.Id, P.[Name], P.Price, PT.[Name]
+ORDER BY SUM(S.Quantity) DESC";
+        }
+
+        public string ShowNonBoughtProdByDay()
+        {
+            return @"SELECT P.Id, P.[Name], P.Price, PT.[Name] AS [Type] FROM Products AS P
+JOIN ProductTypes AS PT ON P.TypeId = PT.Id
+JOIN Sales AS S ON S.ProductId = P.Id
+GROUP BY P.Id, P.[Name], P.Price, PT.[Name]
+HAVING MIN(DATEDIFF(DAY, S.[Date], GETDATE())) > @Days";
         }
     }
 }

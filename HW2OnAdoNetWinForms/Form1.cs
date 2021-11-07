@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -18,6 +19,8 @@ namespace HW2OnAdoNetWinForms
     {
         private IDbFactory _dbFactory;
         private IDbQueryList _queryList;
+        private DbCommandBuilder _builder;
+        private IDbDataAdapter adapter;
         DataSet data;
 
         public string InfoString
@@ -108,6 +111,30 @@ namespace HW2OnAdoNetWinForms
                 case 12:
                     query = _queryList.ShowProductsByType();
                     break;
+                case 13:
+                    query = _queryList.ShowMostProdMan();
+                    break;
+                case 14:
+                    query = _queryList.ShowMostExpMan();
+                    break;
+                case 15:
+                    query = _queryList.ShowMostExpBuyer();
+                    break;
+                case 16:
+                    query = _queryList.ShowMostProdType();
+                    break;
+                case 17:
+                    query = _queryList.ShowMostExpType();
+                    break;
+                case 18:
+                    query = _queryList.ShowMostPopProd();
+                    break;
+                case 19:
+                    query = _queryList.ShowMostExpManByDate();
+                    break;
+                case 20:
+                    query = _queryList.ShowNonBoughtProdByDay();
+                    break;
                 default:
                     break;
             }
@@ -132,20 +159,76 @@ namespace HW2OnAdoNetWinForms
                         parameter.Value = InfoString;
                         command.Parameters.Add(parameter);
                         break;
+                    case 19:
+                        parameter = _dbFactory.CreateParameter("@Date1", SqlDbType.DateTime);
+                        parameter.Value = dateTimePicker1.Value;
+                        command.Parameters.Add(parameter);
+                        parameter = _dbFactory.CreateParameter("@Date2", SqlDbType.DateTime);
+                        parameter.Value = dateTimePicker2.Value;
+                        command.Parameters.Add(parameter);
+                        break;
+                    case 20:
+                        parameter = _dbFactory.CreateParameter("@Days", SqlDbType.Int);
+                        parameter.Value = InfoString;
+                        command.Parameters.Add(parameter);
+                        break;
                     default:
                         break;
                 }
 
-                //Doesn't work, CS1674
-                //IDbDataAdapter adapter = _dbFactory.CreateAdapter(command);
-                SqlDataAdapter adapter = _dbFactory.CreateAdapter(command) as SqlDataAdapter;
+                adapter = _dbFactory.CreateAdapter(command);
                 
-                using (adapter)
-                {
-                    adapter.Fill(data);
-                }
+                adapter.Fill(data);
             }
             dgData.DataSource = data.Tables[0];
+        }
+
+        private void btnTable_Click(object sender, EventArgs e)
+        {
+            data = new DataSet();
+            dgData.DataSource = null;
+
+            string query = "";
+
+            switch ((sender as Button).Name)
+            {
+                case ("btnProd"):
+                    query = _queryList.ShowProductsPure();
+                    break;
+                case ("btnTypes"):
+                    query = _queryList.ShowTypesPure();
+                    break;
+                case ("btnManagers"):
+                    query = _queryList.ShowManagersPure();
+                    break;
+                case ("btnSales"):
+                    query = _queryList.ShowSalesPure();
+                    break;
+                case ("btnBuyers"):
+                    query = _queryList.ShowBuyersPure();
+                    break;
+                default:
+                    break;
+            }
+
+            IDbConnection connection = GetConnection();
+            IDbCommand command = _dbFactory.CreateCommand(query, connection);
+            adapter = _dbFactory.CreateAdapter(command);
+            _builder = _dbFactory.CreateBuilder(adapter);
+
+            adapter.Fill(data);
+
+            dgData.DataSource = data.Tables[0];
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            adapter.Update(data);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            data.Clear();
         }
     }
 }

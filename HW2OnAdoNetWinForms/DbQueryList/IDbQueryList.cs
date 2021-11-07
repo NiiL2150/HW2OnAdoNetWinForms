@@ -13,6 +13,13 @@ namespace HW2OnAdoNetWinForms.DbQueryList
         string InitManagers();
         string InitProducts();
         string InitSales();
+
+        string ShowProductsPure();
+        string ShowTypesPure();
+        string ShowManagersPure();
+        string ShowBuyersPure();
+        string ShowSalesPure();
+
         string ShowProducts();
         string ShowTypes();
         string ShowManagers();
@@ -25,5 +32,14 @@ namespace HW2OnAdoNetWinForms.DbQueryList
         string ShowSalesByBuyer();
         string ShowRecentSale();
         string ShowCountProductsType();
+
+        string ShowMostProdMan();
+        string ShowMostExpMan();
+        string ShowMostExpManByDate();
+        string ShowMostExpBuyer();
+        string ShowMostProdType();
+        string ShowMostExpType();
+        string ShowMostPopProd();
+        string ShowNonBoughtProdByDay();
     }
 }
